@@ -14,6 +14,5 @@ let (|IsDivisibleBy|_|) divisor number =
 
 let check number =
     match number with
-    | IsNotDivisibleBy 4 -> false
-    | IsDivisibleBy 4 & IsDivisibleBy 100 & IsNotDivisibleBy 400 -> false
+    | IsNotDivisibleBy 4 | (IsDivisibleBy 4 & IsDivisibleBy 100 & IsNotDivisibleBy 400)-> false
     |_ -> true
