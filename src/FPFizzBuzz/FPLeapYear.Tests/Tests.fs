@@ -8,6 +8,10 @@ open Xunit
 [<InlineData(1600, true)>]
 [<InlineData(1600, true)>]
 [<InlineData(1800, false)>]
+[<InlineData(1584, true)>]
+[<InlineData(1672, true)>]
+[<InlineData(1690, false)>]
+[<InlineData(1700, false)>]
 let ``should return check if is a leap year or not`` (year, expected) =
   let result = LeapYear.check year
   Assert.Equal(expected, result)
