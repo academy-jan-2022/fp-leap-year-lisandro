@@ -3,7 +3,7 @@ module Tests
 open Xunit
 
 [<Theory>]
-[<InlineData(1997, true)>]
-let ``is not a leap year when NOT divisible by 4`` () =
-  let result = LeapYear.check 1
-  Assert.Equal("1", result)
+[<InlineData(1997, false)>]
+let ``is not a leap year when NOT divisible by 4`` (year, expected) =
+  let result = LeapYear.check year
+  Assert.Equal(expected, result)
