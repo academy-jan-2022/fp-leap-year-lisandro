@@ -4,7 +4,11 @@ open Xunit
 
 [<Theory>]
 [<InlineData(1997, false)>]
-let ``is not a leap year when NOT divisible by 4`` (year, expected) =
+[<InlineData(1996, true)>]
+[<InlineData(1600, true)>]
+[<InlineData(1600, true)>]
+[<InlineData(1800, false)>]
+let ``should return check if is a leap year or not`` (year, expected) =
   let result = LeapYear.check year
   Assert.Equal(expected, result)
 
