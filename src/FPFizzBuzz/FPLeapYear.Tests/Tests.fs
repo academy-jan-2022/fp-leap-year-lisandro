@@ -17,3 +17,13 @@ let ``should return false when the number is not divisible by the divisor`` (num
     |_ -> true
     
   Assert.Equal(expected, result)
+  
+[<Theory>]
+[<InlineData(1996, 4, true)>]
+let ``should return true when the number is divisible by the divisor`` (number, divisor, expected) =
+  let result =
+    match number with
+    | LeapYear.IsDivisibleBy divisor -> true
+    |_ -> true
+    
+  Assert.Equal(expected, result)
